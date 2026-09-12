@@ -6,14 +6,14 @@
 <title>旅のしおり 2026.9.18–23 東京→仙台→札幌</title>
 <style>
   :root{
-    --ai:#14324B;
-    --kami:#ECEDE7;
-    --sumi:#1F2730;
-    --sumi-usu:#5B6672;
-    --shu:#A8412C;
-    --koke:#4C6B58;
-    --awa:#C3D0D8;
-    --sen:#B9C2C7;
+    --ai:#3F6F68;
+    --kami:#FFF9F0;
+    --sumi:#35413E;
+    --sumi-usu:#687570;
+    --shu:#B95A44;
+    --koke:#6E8D69;
+    --awa:#DDEDE5;
+    --sen:#CFDDD7;
     --mincho:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP",serif;
     --gothic:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",sans-serif;
   }
@@ -28,7 +28,7 @@
 
   body{
     margin:0;
-    background:var(--kami);
+    background:#EAF2EC;
     color:var(--sumi);
     font-family:var(--gothic);
     font-size:16px;
@@ -40,13 +40,17 @@
     max-width:720px;
     margin:0 auto;
     padding:0 20px 72px;
+    min-height:100vh;
+    background:var(--kami);
+    box-shadow:0 0 28px rgba(53,82,74,.09);
   }
 
   .head{
-    background:var(--ai);
+    background:linear-gradient(135deg,#477970 0%,#608A7E 100%);
     color:var(--kami);
     margin:0 -20px 34px;
     padding:38px 20px 30px;
+    box-shadow:inset 0 -3px 0 var(--shu);
   }
 
   .head .kikan{
@@ -63,6 +67,8 @@
     line-height:1.35;
     margin:0;
     font-weight:600;
+    letter-spacing:.015em;
+    text-wrap:balance;
   }
 
   .route .ya{
@@ -82,6 +88,10 @@
   }
 
   h2{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:16px;
     font-family:var(--mincho);
     font-size:1.28rem;
     font-weight:600;
@@ -91,7 +101,7 @@
   }
 
   h2 .hi{
-    float:right;
+    flex:0 0 auto;
     font-family:var(--gothic);
     font-size:.76rem;
     font-weight:400;
@@ -106,6 +116,8 @@
     background:#fff;
     padding:20px 22px 16px;
     margin-bottom:8px;
+    border-radius:0 5px 5px 0;
+    box-shadow:0 3px 14px rgba(53,82,74,.06);
   }
 
   .yoyaku p.mae{
@@ -246,6 +258,7 @@
 
   .koma .midashi{
     font-size:1rem;
+    font-weight:600;
     line-height:1.6;
     margin:0;
   }
@@ -267,7 +280,7 @@
     border:1px solid var(--awa);
     background:#fff;
     color:var(--ai);
-    border-radius:2px;
+    border-radius:999px;
     white-space:nowrap;
   }
 
@@ -290,6 +303,7 @@
     margin:6px 0 0;
     font-size:.86rem;
     line-height:1.7;
+    border-radius:0 4px 4px 0;
   }
 
   .chui b{
@@ -348,6 +362,8 @@
     border:1px solid var(--sen);
     padding:4px 0;
     margin:14px 0 0;
+    border-radius:5px;
+    overflow:hidden;
   }
 
   .yoyakuban dl{
@@ -419,6 +435,15 @@
       font-size:.87rem;
     }
 
+    h2{
+      align-items:flex-start;
+      gap:10px;
+    }
+
+    h2 .hi{
+      padding-top:.45em;
+    }
+
     .yoyakuban dl{
       grid-template-columns:1fr;
     }
@@ -432,6 +457,11 @@
   @media print{
     body{
       background:#fff;
+    }
+
+    .wrap{
+      background:#fff;
+      box-shadow:none;
     }
 
     .head{
