@@ -6,90 +6,457 @@
 <title>旅のしおり 2026.9.18–23 東京→仙台→札幌</title>
 <style>
   :root{
-    --ai:#14324B;--kami:#ECEDE7;--sumi:#1F2730;--sumi-usu:#5B6672;
-    --shu:#A8412C;--koke:#4C6B58;--awa:#C3D0D8;--sen:#B9C2C7;
+    --ai:#14324B;
+    --kami:#ECEDE7;
+    --sumi:#1F2730;
+    --sumi-usu:#5B6672;
+    --shu:#A8412C;
+    --koke:#4C6B58;
+    --awa:#C3D0D8;
+    --sen:#B9C2C7;
     --mincho:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP",serif;
     --gothic:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",sans-serif;
   }
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{margin:0;background:var(--kami);color:var(--sumi);font-family:var(--gothic);
-    font-size:16px;line-height:1.75;font-feature-settings:"palt" 1}
-  .wrap{max-width:720px;margin:0 auto;padding:0 20px 72px}
 
-  .head{background:var(--ai);color:var(--kami);margin:0 -20px 34px;padding:38px 20px 30px}
-  .head .kikan{font-size:.82rem;letter-spacing:.06em;color:var(--awa);margin:0 0 14px;font-variant-numeric:tabular-nums}
-  .route{font-family:var(--mincho);font-size:clamp(1.5rem,6.4vw,2.3rem);line-height:1.35;margin:0;font-weight:600}
-  .route .ya{color:var(--awa);font-size:.72em;vertical-align:.12em;padding:0 .16em;font-weight:400}
-  .head .riido{font-family:var(--mincho);color:var(--awa);margin:14px 0 0;font-size:.98rem;line-height:1.8}
+  *{
+    box-sizing:border-box;
+  }
 
-  h2{font-family:var(--mincho);font-size:1.28rem;font-weight:600;margin:52px 0 4px;padding-bottom:9px;border-bottom:2px solid var(--ai)}
-  h2 .hi{float:right;font-family:var(--gothic);font-size:.76rem;font-weight:400;color:var(--sumi-usu);padding-top:.55em;letter-spacing:.02em}
+  html{
+    -webkit-text-size-adjust:100%;
+  }
 
-  .yoyaku{border:1px solid var(--shu);border-left:5px solid var(--shu);background:#fff;padding:20px 22px 16px;margin-bottom:8px}
-  .yoyaku p.mae{margin:0 0 14px;font-size:.93rem}
-  .yoyaku ul{list-style:none;margin:0;padding:0}
-  .yoyaku li{display:flex;gap:11px;align-items:flex-start;padding:9px 0;border-top:1px solid #E2E4E0}
-  .yoyaku li:first-child{border-top:none}
-  .yoyaku input{appearance:none;-webkit-appearance:none;flex:0 0 auto;width:17px;height:17px;margin:5px 0 0;border:1.5px solid var(--sumi-usu);background:#fff;cursor:pointer}
-  .yoyaku input:checked{background:var(--koke);border-color:var(--koke)}
-  .yoyaku input:checked::after{content:"";display:block;width:5px;height:10px;margin:1px 0 0 5px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(42deg)}
-  .yoyaku input:focus-visible{outline:2px solid var(--ai);outline-offset:2px}
-  .yoyaku label{font-size:.94rem;line-height:1.6;cursor:pointer}
-  .yoyaku .kigen{color:var(--shu);font-size:.82rem;margin-left:.4em;white-space:nowrap}
-  .yoyaku input:checked + label{color:var(--sumi-usu);text-decoration:line-through}
+  body{
+    margin:0;
+    background:var(--kami);
+    color:var(--sumi);
+    font-family:var(--gothic);
+    font-size:16px;
+    line-height:1.75;
+    font-feature-settings:"palt" 1;
+  }
 
-  .kotei{margin:18px 0 0}
-  .koma{display:grid;grid-template-columns:56px 15px 1fr;column-gap:12px}
-  .koma .ji{font-size:.94rem;font-weight:600;text-align:right;font-variant-numeric:tabular-nums;padding-top:2px;color:var(--ai)}
-  .koma .ji.aki{color:var(--sumi-usu);font-weight:400}
-  .sen-tate{position:relative}
-  .sen-tate::before{content:"";position:absolute;left:6px;top:0;bottom:-2px;width:1px;background:var(--sen)}
-  .koma:last-child .sen-tate::before{bottom:auto;height:12px}
-  .maru{position:absolute;left:2px;top:9px;width:9px;height:9px;border-radius:50%;background:var(--kami);border:1.5px solid var(--ai)}
-  .maru.nuri{background:var(--ai)}
-  .koma .naka{padding:0 0 20px}
-  .koma .midashi{font-size:1rem;line-height:1.6;margin:0}
-  .koma .shosai{font-size:.88rem;color:var(--sumi-usu);margin:2px 0 0;line-height:1.7}
-  .shudan{display:inline-block;font-size:.72rem;line-height:1.5;padding:1px 7px;margin-right:7px;vertical-align:.1em;border:1px solid var(--awa);background:#fff;color:var(--ai);border-radius:2px;white-space:nowrap}
-  .shudan.basu{background:var(--ai);color:#fff;border-color:var(--ai)}
-  .shudan.sora{background:var(--shu);color:#fff;border-color:var(--shu)}
+  .wrap{
+    max-width:720px;
+    margin:0 auto;
+    padding:0 20px 72px;
+  }
 
-  .chui{background:#fff;border-left:3px solid var(--shu);padding:10px 14px;margin:6px 0 0;font-size:.86rem;line-height:1.7}
-  .chui b{color:var(--shu);font-weight:600}
+  .head{
+    background:var(--ai);
+    color:var(--kami);
+    margin:0 -20px 34px;
+    padding:38px 20px 30px;
+  }
 
-  table{width:100%;border-collapse:collapse;margin:14px 0 0;font-size:.91rem;background:#fff}
-  th,td{padding:9px 12px;border-bottom:1px solid #E2E4E0;text-align:left;vertical-align:top}
-  th{font-weight:600;color:var(--ai);width:56%}
-  td{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-  tr.gokei th,tr.gokei td{border-bottom:none;border-top:2px solid var(--ai);font-weight:700;color:var(--ai);padding-top:11px}
-  table caption{caption-side:bottom;text-align:left;font-size:.82rem;color:var(--sumi-usu);padding-top:9px;line-height:1.7}
+  .head .kikan{
+    font-size:.82rem;
+    letter-spacing:.06em;
+    color:var(--awa);
+    margin:0 0 14px;
+    font-variant-numeric:tabular-nums;
+  }
 
-  .yoyakuban{background:#fff;border:1px solid var(--sen);padding:4px 0;margin:14px 0 0}
-  .yoyakuban dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:0}
-  .yoyakuban dt{padding:8px 14px;font-size:.85rem;color:var(--ai);font-weight:600;border-bottom:1px solid #E9EBE7}
-  .yoyakuban dd{padding:8px 14px;margin:0;font-size:.9rem;font-variant-numeric:tabular-nums;letter-spacing:.03em;border-bottom:1px solid #E9EBE7}
-  .yoyakuban dt:last-of-type,.yoyakuban dd:last-of-type{border-bottom:none}
+  .route{
+    font-family:var(--mincho);
+    font-size:clamp(1.5rem,6.4vw,2.3rem);
+    line-height:1.35;
+    margin:0;
+    font-weight:600;
+  }
 
-  ul.futsu{padding-left:1.15em;margin:10px 0 0}
-  ul.futsu li{margin-bottom:7px;font-size:.94rem;line-height:1.75}
-  .memo{font-size:.86rem;color:var(--sumi-usu);line-height:1.75}
-  .shime{margin-top:56px;padding-top:16px;border-top:1px solid var(--sen);font-size:.8rem;color:var(--sumi-usu);line-height:1.8}
+  .route .ya{
+    color:var(--awa);
+    font-size:.72em;
+    vertical-align:.12em;
+    padding:0 .16em;
+    font-weight:400;
+  }
+
+  .head .riido{
+    font-family:var(--mincho);
+    color:var(--awa);
+    margin:14px 0 0;
+    font-size:.98rem;
+    line-height:1.8;
+  }
+
+  h2{
+    font-family:var(--mincho);
+    font-size:1.28rem;
+    font-weight:600;
+    margin:52px 0 4px;
+    padding-bottom:9px;
+    border-bottom:2px solid var(--ai);
+  }
+
+  h2 .hi{
+    float:right;
+    font-family:var(--gothic);
+    font-size:.76rem;
+    font-weight:400;
+    color:var(--sumi-usu);
+    padding-top:.55em;
+    letter-spacing:.02em;
+  }
+
+  .yoyaku{
+    border:1px solid var(--shu);
+    border-left:5px solid var(--shu);
+    background:#fff;
+    padding:20px 22px 16px;
+    margin-bottom:8px;
+  }
+
+  .yoyaku p.mae{
+    margin:0 0 14px;
+    font-size:.93rem;
+  }
+
+  .yoyaku ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+
+  .yoyaku li{
+    display:flex;
+    gap:11px;
+    align-items:flex-start;
+    padding:9px 0;
+    border-top:1px solid #E2E4E0;
+  }
+
+  .yoyaku li:first-child{
+    border-top:none;
+  }
+
+  .yoyaku input{
+    appearance:none;
+    -webkit-appearance:none;
+    flex:0 0 auto;
+    width:17px;
+    height:17px;
+    margin:5px 0 0;
+    border:1.5px solid var(--sumi-usu);
+    background:#fff;
+    cursor:pointer;
+  }
+
+  .yoyaku input:checked{
+    background:var(--koke);
+    border-color:var(--koke);
+  }
+
+  .yoyaku input:checked::after{
+    content:"";
+    display:block;
+    width:5px;
+    height:10px;
+    margin:1px 0 0 5px;
+    border:solid #fff;
+    border-width:0 2px 2px 0;
+    transform:rotate(42deg);
+  }
+
+  .yoyaku input:focus-visible{
+    outline:2px solid var(--ai);
+    outline-offset:2px;
+  }
+
+  .yoyaku label{
+    font-size:.94rem;
+    line-height:1.6;
+    cursor:pointer;
+  }
+
+  .yoyaku .kigen{
+    color:var(--shu);
+    font-size:.82rem;
+    margin-left:.4em;
+    white-space:nowrap;
+  }
+
+  .yoyaku input:checked + label{
+    color:var(--sumi-usu);
+    text-decoration:line-through;
+  }
+
+  .kotei{
+    margin:18px 0 0;
+  }
+
+  .koma{
+    display:grid;
+    grid-template-columns:56px 15px 1fr;
+    column-gap:12px;
+  }
+
+  .koma .ji{
+    font-size:.94rem;
+    font-weight:600;
+    text-align:right;
+    font-variant-numeric:tabular-nums;
+    padding-top:2px;
+    color:var(--ai);
+  }
+
+  .koma .ji.aki{
+    color:var(--sumi-usu);
+    font-weight:400;
+  }
+
+  .sen-tate{
+    position:relative;
+  }
+
+  .sen-tate::before{
+    content:"";
+    position:absolute;
+    left:6px;
+    top:0;
+    bottom:-2px;
+    width:1px;
+    background:var(--sen);
+  }
+
+  .koma:last-child .sen-tate::before{
+    bottom:auto;
+    height:12px;
+  }
+
+  .maru{
+    position:absolute;
+    left:2px;
+    top:9px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:var(--kami);
+    border:1.5px solid var(--ai);
+  }
+
+  .maru.nuri{
+    background:var(--ai);
+  }
+
+  .koma .naka{
+    padding:0 0 20px;
+  }
+
+  .koma .midashi{
+    font-size:1rem;
+    line-height:1.6;
+    margin:0;
+  }
+
+  .koma .shosai{
+    font-size:.88rem;
+    color:var(--sumi-usu);
+    margin:2px 0 0;
+    line-height:1.7;
+  }
+
+  .shudan{
+    display:inline-block;
+    font-size:.72rem;
+    line-height:1.5;
+    padding:1px 7px;
+    margin-right:7px;
+    vertical-align:.1em;
+    border:1px solid var(--awa);
+    background:#fff;
+    color:var(--ai);
+    border-radius:2px;
+    white-space:nowrap;
+  }
+
+  .shudan.basu{
+    background:var(--ai);
+    color:#fff;
+    border-color:var(--ai);
+  }
+
+  .shudan.sora{
+    background:var(--shu);
+    color:#fff;
+    border-color:var(--shu);
+  }
+
+  .chui{
+    background:#fff;
+    border-left:3px solid var(--shu);
+    padding:10px 14px;
+    margin:6px 0 0;
+    font-size:.86rem;
+    line-height:1.7;
+  }
+
+  .chui b{
+    color:var(--shu);
+    font-weight:600;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:14px 0 0;
+    font-size:.91rem;
+    background:#fff;
+  }
+
+  th,
+  td{
+    padding:9px 12px;
+    border-bottom:1px solid #E2E4E0;
+    text-align:left;
+    vertical-align:top;
+  }
+
+  th{
+    font-weight:600;
+    color:var(--ai);
+    width:56%;
+  }
+
+  td{
+    text-align:right;
+    font-variant-numeric:tabular-nums;
+    white-space:nowrap;
+  }
+
+  tr.gokei th,
+  tr.gokei td{
+    border-bottom:none;
+    border-top:2px solid var(--ai);
+    font-weight:700;
+    color:var(--ai);
+    padding-top:11px;
+  }
+
+  table caption{
+    caption-side:bottom;
+    text-align:left;
+    font-size:.82rem;
+    color:var(--sumi-usu);
+    padding-top:9px;
+    line-height:1.7;
+  }
+
+  .yoyakuban{
+    background:#fff;
+    border:1px solid var(--sen);
+    padding:4px 0;
+    margin:14px 0 0;
+  }
+
+  .yoyakuban dl{
+    margin:0;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:0;
+  }
+
+  .yoyakuban dt{
+    padding:8px 14px;
+    font-size:.85rem;
+    color:var(--ai);
+    font-weight:600;
+    border-bottom:1px solid #E9EBE7;
+  }
+
+  .yoyakuban dd{
+    padding:8px 14px;
+    margin:0;
+    font-size:.9rem;
+    font-variant-numeric:tabular-nums;
+    letter-spacing:.03em;
+    border-bottom:1px solid #E9EBE7;
+  }
+
+  .yoyakuban dt:last-of-type,
+  .yoyakuban dd:last-of-type{
+    border-bottom:none;
+  }
+
+  ul.futsu{
+    padding-left:1.15em;
+    margin:10px 0 0;
+  }
+
+  ul.futsu li{
+    margin-bottom:7px;
+    font-size:.94rem;
+    line-height:1.75;
+  }
+
+  .memo{
+    font-size:.86rem;
+    color:var(--sumi-usu);
+    line-height:1.75;
+  }
+
+  .shime{
+    margin-top:56px;
+    padding-top:16px;
+    border-top:1px solid var(--sen);
+    font-size:.8rem;
+    color:var(--sumi-usu);
+    line-height:1.8;
+  }
 
   @media (max-width:430px){
-    body{font-size:15px}
-    .koma{grid-template-columns:48px 14px 1fr;column-gap:9px}
-    .koma .ji{font-size:.87rem}
-    .yoyakuban dl{grid-template-columns:1fr}
-    .yoyakuban dt{padding-bottom:0;border-bottom:none}
+    body{
+      font-size:15px;
+    }
+
+    .koma{
+      grid-template-columns:48px 14px 1fr;
+      column-gap:9px;
+    }
+
+    .koma .ji{
+      font-size:.87rem;
+    }
+
+    .yoyakuban dl{
+      grid-template-columns:1fr;
+    }
+
+    .yoyakuban dt{
+      padding-bottom:0;
+      border-bottom:none;
+    }
   }
+
   @media print{
-    body{background:#fff}
-    .head{background:#fff;color:var(--sumi);border-bottom:3px solid var(--ai);padding-top:0}
-    .head .kikan,.head .riido{color:var(--sumi-usu)}
-    .route .ya{color:var(--sen)}
-    h2{page-break-after:avoid}
-    .koma{page-break-inside:avoid}
+    body{
+      background:#fff;
+    }
+
+    .head{
+      background:#fff;
+      color:var(--sumi);
+      border-bottom:3px solid var(--ai);
+      padding-top:0;
+    }
+
+    .head .kikan,
+    .head .riido{
+      color:var(--sumi-usu);
+    }
+
+    .route .ya{
+      color:var(--sen);
+    }
+
+    h2{
+      page-break-after:avoid;
+    }
+
+    .koma{
+      page-break-inside:avoid;
+    }
   }
 </style>
 </head>
@@ -123,6 +490,7 @@
       <p class="shosai">出発まで5時間あります。いったん家に戻って荷物を取り、夕食を済ませてから東京駅へ向かう余裕があります。むしろ時間が余るので、東京駅周辺で腰を落ち着けて食事をしておくこと。バスに乗ってしまうと朝まで何も食べられません。</p>
     </div>
   </div>
+
   <div class="koma">
     <div class="ji">22:35</div>
     <div class="sen-tate"><span class="maru nuri"></span></div>
@@ -132,6 +500,7 @@
       <div class="chui"><b>バスは定刻に出ます。</b>遅れても待ってもらえません。乗り場の場所は当日ではなく、前日までに地図で確認しておくこと。</div>
     </div>
   </div>
+
   <div class="koma">
     <div class="ji">22:45</div>
     <div class="sen-tate"><span class="maru nuri"></span></div>
@@ -142,7 +511,7 @@
   </div>
 </div>
 
-<h2>9月19日（土）<span class="hi">仙台を一日</span></h2>
+<h2>9月19日（土）<span class="hi">仙台をゆっくり</span></h2>
 <div class="kotei">
   <div class="koma">
     <div class="ji">5:00</div>
@@ -152,108 +521,166 @@
       <p class="shosai">仙台駅の東口側、東七番丁通り沿い。駅の西口側に出るには自由通路を通ります。</p>
     </div>
   </div>
+
   <div class="koma">
     <div class="ji aki">5:30</div>
     <div class="sen-tate"><span class="maru"></span></div>
     <div class="naka">
-      <p class="midashi">まず体を立て直す</p>
-      <p class="shosai">夜行バスで4時間半しか寝ていない状態です。ここで無理に動き出すと、この日の後半が潰れます。<br>仙台駅周辺には早朝から入れるサウナやカプセルホテルがあり、朝風呂と仮眠だけの利用ができます。1,500〜2,500円ほどで、シャワーを浴びて2時間眠れば、その日の質がまるで変わります。</p>
+      <p class="midashi">朝風呂と仮眠で体を立て直す</p>
+      <p class="shosai">夜行バス明けなので、午前中から観光地を詰め込まない日です。仙台駅周辺の早朝利用できる入浴施設などで、シャワーと仮眠を優先します。<br>目が覚めても急いで動かず、10時ごろまで休む前提で。</p>
     </div>
   </div>
-  <div class="koma">
-    <div class="ji aki">8:30</div>
-    <div class="sen-tate"><span class="maru"></span></div>
-    <div class="naka">
-      <p class="midashi">仙台朝市で朝ごはん</p>
-      <p class="shosai">仙台駅西口から徒歩5分ほど、200mほどのアーケードに鮮魚店や総菜屋が並びます。海鮮丼を出す店もあり、その場で食べられます。<br>「仙台の台所」と呼ばれる場所で、観光地というより生活の市場です。</p>
-    </div>
-  </div>
+
   <div class="koma">
     <div class="ji aki">10:00</div>
     <div class="sen-tate"><span class="maru"></span></div>
     <div class="naka">
-      <p class="midashi">仙台駅のコインロッカーに荷物を入れる</p>
-      <p class="shosai">今日の宿は多賀城なので、市内観光の間は駅に預けます。夕方に取りに戻る前提。<br>連休初日は埋まりやすいので、大きいサイズが空いていなければ駅の手荷物預かり所へ。</p>
+      <p class="midashi">遅めの朝食か、早めの昼食</p>
+      <p class="shosai">仙台朝市か仙台駅周辺で、その日の体調に合わせて食べます。朝市は鮮魚店や総菜屋が並ぶ生活の市場で、海鮮丼などを食べられる店もあります。<br>食欲がなければ無理に朝市へ行かず、駅の喫茶店などで軽く済ませても大丈夫です。</p>
     </div>
   </div>
+
   <div class="koma">
-    <div class="ji aki">10:30</div>
+    <div class="ji aki">11:00</div>
     <div class="sen-tate"><span class="maru"></span></div>
     <div class="naka">
-      <p class="midashi"><span class="shudan">バス</span>るーぷる仙台で市内を回る</p>
-      <p class="shosai">仙台駅前から出る観光循環バスです。一日乗車券を買えば乗り降り自由で、主要な見どころを順に拾えます。土日は本数が増えます。<br>回る順は、瑞鳳殿（伊達政宗の霊屋、極彩色の桃山建築）、仙台市博物館、仙台城跡（青葉城址、市街を見下ろす高台と政宗の騎馬像）、大崎八幡宮（国宝の社殿）。</p>
+      <p class="midashi">仙台駅に荷物を預ける</p>
+      <p class="shosai">今日の宿は多賀城なので、市内にいる間は駅のコインロッカーか手荷物預かり所を利用します。連休初日なので、空きがあるうちに預けておきます。</p>
     </div>
   </div>
+
   <div class="koma">
-    <div class="ji aki">13:00</div>
+    <div class="ji aki">11:30</div>
     <div class="sen-tate"><span class="maru"></span></div>
     <div class="naka">
-      <p class="midashi">牛たんで昼食</p>
-      <p class="shosai">仙台駅の3階に牛たん通りがあり、名店が並んでいます。市内にも店は多いので、るーぷるの経路上で見つけたところでも。麦飯とテールスープが付くのが仙台の定食の形です。</p>
+      <p class="midashi"><span class="shudan">地下鉄</span>仙台市博物館へ</p>
+      <p class="shosai">地下鉄東西線で国際センター駅へ向かい、駅から歩きます。仙台藩や伊達家の資料を見て、翌日の松島・瑞巌寺につながる歴史を軽く予習します。<br>開館は9:00〜16:45（入館は16:15まで）。展示を全部読み切ろうとせず、1時間半〜2時間ほどを目安に。</p>
     </div>
   </div>
+
+  <div class="koma">
+    <div class="ji aki">14:00</div>
+    <div class="sen-tate"><span class="maru"></span></div>
+    <div class="naka">
+      <p class="midashi">遅めの昼食</p>
+      <p class="shosai">朝を軽く済ませた場合は、仙台駅へ戻って牛たんなどを食べます。朝市でしっかり食べていれば、喫茶店で休憩する時間にしても構いません。</p>
+    </div>
+  </div>
+
   <div class="koma">
     <div class="ji aki">15:30</div>
     <div class="sen-tate"><span class="maru"></span></div>
     <div class="naka">
-      <p class="midashi">定禅寺通を歩く</p>
-      <p class="shosai">ケヤキ並木の中央に遊歩道が通る、仙台でいちばん気持ちのいい通りです。9月下旬はまだ緑。仙台駅まで歩いて戻れる距離です。</p>
+      <p class="midashi">予定を入れない時間</p>
+      <p class="shosai">疲れていれば駅周辺で座って休みます。余力があれば、定禅寺通や商店街を少し歩く程度に。仙台城跡、瑞鳳殿、大崎八幡宮は今回は回らなくて大丈夫です。</p>
     </div>
   </div>
+
   <div class="koma">
-    <div class="ji aki">17:00</div>
+    <div class="ji aki">17:30</div>
     <div class="sen-tate"><span class="maru"></span></div>
     <div class="naka">
-      <p class="midashi">荷物を回収して、夕食</p>
-      <p class="shosai">駅3階の牛たん通りか、東北最大の繁華街である国分町へ。せり鍋、はらこ飯、ホヤ、笹かまが土地のもの。ずんだ餅は駅ビルで買えます。<br>連休初日なので、人気店は予約か開店直後を狙うこと。</p>
-      <div class="chui">宿は多賀城駅から徒歩5分なので、遅くなっても電車で帰れます。仙石線の終電は23時台。<br>ただし今日は5時起きの日です。夜行バスの疲れは翌日に出るので、20時前には切り上げて宿の大浴場に入るほうが、この旅全体としては得です。</div>
+      <p class="midashi">早めの夕食、荷物を回収</p>
+      <p class="shosai">駅周辺で牛たん、はらこ飯、笹かまなどから選びます。連休初日なので、人気店は開店直後を狙うか、待ち時間の短い店へ。<br>翌日の松島がこの旅の主役なので、仙台の夜を長くしすぎないこと。</p>
+      <div class="chui">19時前後には多賀城へ移動し、ホテルの大浴場で休みます。19日は観光を増やす日ではなく、夜行バスの疲れを翌日に残さない日です。</div>
     </div>
   </div>
+
   <div class="koma">
-    <div class="ji">19:40</div>
+    <div class="ji">18:30</div>
     <div class="sen-tate"><span class="maru nuri"></span></div>
     <div class="naka">
       <p class="midashi"><span class="shudan">JR</span>仙石線で多賀城へ</p>
       <p class="shosai">仙台から約20分、320円ほど。</p>
     </div>
   </div>
+
   <div class="koma">
-    <div class="ji aki">20:10</div>
+    <div class="ji aki">19:00</div>
     <div class="sen-tate"><span class="maru"></span></div>
     <div class="naka">
       <p class="midashi">ホテルルートイン多賀城駅東 チェックイン</p>
+      <p class="shosai">予約時のチェックイン予定時刻は19:00です。</p>
       <p class="shosai">多賀城市八幡4-4-77。駅の東へ400mほど、歩いて5分です。予約番号 T18DF74EF200C、8,800円、朝食付き。<br>部屋は喫煙シングルで浴室なしですが、館内に大浴場があります。夜行バスと市内歩きの疲れは、ここで落としてください。<br>キャンセルは9/15まで無料、以降は段階的に料金がかかります。</p>
     </div>
   </div>
 </div>
 
-<h2>9月20日（日）<span class="hi">仙台 → 松島 → 新千歳 → 札幌</span></h2>
+<h2>9月20日（日）<span class="hi">松島 → 新千歳 → 札幌</span></h2>
 <div class="kotei">
   <div class="koma">
-    <div class="ji aki">8:00</div>
+    <div class="ji aki">7:30</div>
     <div class="sen-tate"><span class="maru"></span></div>
     <div class="naka">
       <p class="midashi">朝食、チェックアウト</p>
-      <p class="shosai">朝食が付いています。多賀城駅までは歩いて5分なので、朝の移動に余裕があります。</p>
+      <p class="shosai">ホテルの朝食を食べ、8:20ごろまでに出発します。多賀城駅までは歩いて5分です。</p>
     </div>
   </div>
+
   <div class="koma">
     <div class="ji aki">8:40</div>
     <div class="sen-tate"><span class="maru"></span></div>
     <div class="naka">
       <p class="midashi"><span class="shudan">JR</span>仙石線で松島海岸へ</p>
-      <p class="shosai">多賀城から約25分。仙台へ戻らずそのまま向かえるのが、この宿を取ったことで生まれた利点です。<br>日本三景の松島。瑞巌寺（伊達政宗が建てた禅寺、国宝の本堂）、五大堂、遊覧船で湾内の島々を回るコース。半日でちょうど収まります。</p>
-      <div class="chui">荷物は松島海岸駅のコインロッカーへ。埋まっていたら仙台駅まで持っていって預け、そこから松島を往復してください。40分ほど余分にかかるので、その場合は遊覧船を削ります。</div>
+      <p class="shosai">多賀城から約25分。仙台へ戻らず、そのまま松島海岸へ向かいます。到着後、まず荷物を預けて遊覧船乗り場へ。</p>
+      <div class="chui"><b>松島はこの日の主役です。</b>駅のコインロッカーが埋まっていたら、松島海岸レストハウス内の観光協会で手荷物を預けます。仙台へ引き返さず、遊覧船の時間を守ります。</div>
     </div>
   </div>
+
+  <div class="koma">
+    <div class="ji">10:00</div>
+    <div class="sen-tate"><span class="maru nuri"></span></div>
+    <div class="naka">
+      <p class="midashi"><span class="shudan">船</span>松島島巡り遊覧船</p>
+      <p class="shosai">松島発着の仁王丸コースで、島々の間を約50分かけて回ります。9:30ごろまでに発券を済ませ、窓側を取りたい場合は早めに列へ。<br>通常運賃は1,500円。天候による欠航を除き、今回は削らない予定です。</p>
+    </div>
+  </div>
+
+  <div class="koma">
+    <div class="ji aki">11:00</div>
+    <div class="sen-tate"><span class="maru"></span></div>
+    <div class="naka">
+      <p class="midashi">五大堂と海沿いを歩く</p>
+      <p class="shosai">赤い橋を渡って小島の五大堂へ。単独の大きな観光地ではなく、松島湾の景色を見ながら15〜20分ほど立ち寄る場所です。</p>
+    </div>
+  </div>
+
+  <div class="koma">
+    <div class="ji aki">11:30</div>
+    <div class="sen-tate"><span class="maru"></span></div>
+    <div class="naka">
+      <p class="midashi">松島で昼食</p>
+      <p class="shosai">海鮮、穴子、かき料理などから、その場の混み具合で選びます。連休中なので、有名店にこだわって長く並びすぎないこと。</p>
+    </div>
+  </div>
+
+  <div class="koma">
+    <div class="ji aki">12:30</div>
+    <div class="sen-tate"><span class="maru"></span></div>
+    <div class="naka">
+      <p class="midashi">瑞巌寺</p>
+      <p class="shosai">伊達政宗が再興した禅寺で、国宝の本堂と庫裡を見ます。19日に仙台市博物館を見ていれば、伊達家の歴史がつながります。<br>拝観の目安は30〜40分ですが、宝物館も含めて1時間ほど取ります。</p>
+    </div>
+  </div>
+
   <div class="koma">
     <div class="ji aki">13:30</div>
     <div class="sen-tate"><span class="maru"></span></div>
     <div class="naka">
-      <p class="midashi">仙台へ戻る</p>
-      <p class="shosai">松島海岸から仙台まで約40分。駅ビルで土産を買うならこの時間。北海道でも荷物は増えるので、ここでは軽く。</p>
+      <p class="midashi">海沿い散策、土産</p>
+      <p class="shosai">残り時間は松島湾を見ながら歩きます。疲れていれば店で休憩。14時ごろには荷物を受け取り、松島海岸駅へ戻ります。</p>
     </div>
   </div>
+
+  <div class="koma">
+    <div class="ji aki">14:15</div>
+    <div class="sen-tate"><span class="maru"></span></div>
+    <div class="naka">
+      <p class="midashi"><span class="shudan">JR</span>仙台へ戻る</p>
+      <p class="shosai">14時台の仙石線で仙台へ。所要約40分。仙台駅には15時前後に戻り、空港行きまで1時間ほど余裕を残します。</p>
+    </div>
+  </div>
+
   <div class="koma">
     <div class="ji">16:30</div>
     <div class="sen-tate"><span class="maru nuri"></span></div>
@@ -262,6 +689,7 @@
       <p class="shosai">仙台駅から仙台空港まで約25分、660円ほど。17時前には空港に着きます。<br>IBEXの搭乗手続きは出発20分前まで。1時間以上の余裕がある計算です。</p>
     </div>
   </div>
+
   <div class="koma">
     <div class="ji">18:20</div>
     <div class="sen-tate"><span class="maru nuri"></span></div>
@@ -270,6 +698,7 @@
       <p class="shosai">予約番号 EVPAYW、I-スペシャル運賃、23,210円。所要1時間15分。</p>
     </div>
   </div>
+
   <div class="koma">
     <div class="ji aki">20:00</div>
     <div class="sen-tate"><span class="maru"></span></div>
@@ -278,6 +707,7 @@
       <p class="shosai">約37分、1,150円ほど。荷物を受け取って空港駅まで15分見ておくこと。</p>
     </div>
   </div>
+
   <div class="koma">
     <div class="ji aki">21:00</div>
     <div class="sen-tate"><span class="maru"></span></div>
@@ -299,36 +729,68 @@
       <p class="shosai">快速で約35分、普通で約50分、片道750円ほど。銭函から小樽築港にかけて海沿いを走るので、進行方向右の窓側に座ること。</p>
     </div>
   </div>
+
   <div class="koma">
     <div class="ji aki">9:30</div>
     <div class="sen-tate"><span class="maru"></span></div>
     <div class="naka">
       <p class="midashi">小樽運河、堺町通り、北一硝子</p>
-      <p class="shosai">運河は午前のほうが人が少なく撮りやすいです。駅から運河までは緩い下り坂で徒歩10分。</p>
+      <p class="shosai">運河は午前のほうが人が少なく撮りやすいです。駅から運河までは緩い下り坂で徒歩10分。運河を見たあと、堺町通りを歩きながら北一硝子などを見ます。</p>
     </div>
   </div>
+
   <div class="koma">
     <div class="ji aki">12:00</div>
     <div class="sen-tate"><span class="maru"></span></div>
     <div class="naka">
-      <p class="midashi">寿司屋通りで昼食</p>
-      <p class="shosai">連休の昼は行列必至なので、11時半に入るか13時半までずらすか。</p>
+      <p class="midashi">小樽で昼食</p>
+      <p class="shosai">寿司や海鮮を中心に、その場の混み具合で選びます。連休の昼は混雑するため、11時半ごろに入るか、13時以降へずらします。</p>
     </div>
   </div>
+
   <div class="koma">
-    <div class="ji aki">14:00</div>
+    <div class="ji aki">13:30</div>
     <div class="sen-tate"><span class="maru"></span></div>
     <div class="naka">
-      <p class="midashi">天狗山、または余市へ足を延ばす</p>
-      <p class="shosai">天狗山はロープウェイで5分、小樽港を一望できます。余市のニッカ蒸溜所まではJRで25分ほど。見学は事前予約制なので、行くなら早めに枠を取ること。</p>
+      <p class="midashi">堺町通りを散策</p>
+      <p class="shosai">ガラス製品、菓子店、土産店などを見ながら歩きます。店をすべて回ろうとせず、気になる場所へ入る形で。疲れたら喫茶店で休憩します。</p>
     </div>
   </div>
+
+  <div class="koma">
+    <div class="ji aki">16:30</div>
+    <div class="sen-tate"><span class="maru"></span></div>
+    <div class="naka">
+      <p class="midashi">小樽運河へ戻り、夕方の景色を見る</p>
+      <p class="shosai">日没前の運河を見てから小樽駅へ戻ります。キテネ食品館の閉店時刻に間に合うよう、17時台の列車で手稲へ向かいます。</p>
+    </div>
+  </div>
+
+  <div class="koma">
+    <div class="ji aki">17:20</div>
+    <div class="sen-tate"><span class="maru"></span></div>
+    <div class="naka">
+      <p class="midashi"><span class="shudan">JR</span>小樽駅から手稲駅へ</p>
+      <p class="shosai">札幌へ戻る列車に乗り、途中の手稲駅で降ります。列車によって所要時間が異なるため、当日の時刻表を確認します。</p>
+    </div>
+  </div>
+
   <div class="koma">
     <div class="ji aki">18:00</div>
     <div class="sen-tate"><span class="maru"></span></div>
     <div class="naka">
-      <p class="midashi">運河のガス灯が灯る時間に戻る</p>
-      <p class="shosai">日没後の運河沿いが小樽のいちばんいい時間帯です。この時期の日没は17時40分前後。札幌へは20時台の列車で。</p>
+      <p class="midashi">キテネ食品館</p>
+      <p class="shosai">手稲駅南口から徒歩2〜3分。野菜、鮮魚、総菜、菓子などが並ぶ地域の食品店です。観光客向けの土産店ではなく、北海道の普段の食品や価格を見る場所として寄ります。</p>
+      <div class="chui"><b>営業時間は9:30〜20:00。</b>閉店直前にならないよう、19時ごろまでには入店します。営業日時は旅行直前にも確認してください。</div>
+    </div>
+  </div>
+
+  <div class="koma">
+    <div class="ji aki">19:15</div>
+    <div class="sen-tate"><span class="maru"></span></div>
+    <div class="naka">
+      <p class="midashi"><span class="shudan">JR</span>手稲駅から札幌へ</p>
+      <p class="shosai">快速なら約10分、普通なら約15分。買ったものを持ってホテルへ戻ります。夕食は札幌で食べるか、キテネ食品館で買った総菜などをホテルで食べます。</p>
     </div>
   </div>
 </div>
@@ -336,13 +798,15 @@
 <h2>9月22日（火・国民の休日）<span class="hi">札幌</span></h2>
 <div class="kotei">
   <div class="koma">
-    <div class="ji aki">8:30</div>
-    <div class="sen-tate"><span class="maru"></span></div>
+    <div class="ji">8:30</div>
+    <div class="sen-tate"><span class="maru nuri"></span></div>
     <div class="naka">
-      <p class="midashi">ANAのオンラインチェックイン</p>
-      <p class="shosai">翌朝の便の24時間前がこの時刻です。シンプル運賃は座席指定がこのタイミングからなので、忘れずに。ANAアプリなら数タップで済みます。</p>
+      <p class="midashi">ANA NH052のオンラインチェックイン</p>
+      <p class="shosai">翌日の新千歳8:30発の24時間前です。ANAアプリまたはANAウェブサイトからオンラインチェックインを行い、搭乗用の二次元コードを表示できる状態にします。</p>
+      <div class="chui"><b>観光へ出る前に済ませます。</b>座席、便名、出発時刻を確認し、搭乗用の画面は必要に応じて画像として保存しておきます。</div>
     </div>
   </div>
+
   <div class="koma">
     <div class="ji aki">9:00</div>
     <div class="sen-tate"><span class="maru"></span></div>
@@ -351,6 +815,7 @@
       <p class="shosai">宿から歩いていけます。海鮮丼を朝に食べておくと、あとの食事を組みやすくなります。</p>
     </div>
   </div>
+
   <div class="koma">
     <div class="ji aki">10:30</div>
     <div class="sen-tate"><span class="maru"></span></div>
@@ -359,14 +824,16 @@
       <p class="shosai">札幌駅の北と南に固まっているので歩いてつなげます。北大のポプラ並木とイチョウ並木が色づき始める頃。<br>札幌市内はこの日しかないので、行きたい場所を朝のうちに決めておくこと。</p>
     </div>
   </div>
+
   <div class="koma">
     <div class="ji aki">14:00</div>
     <div class="sen-tate"><span class="maru"></span></div>
     <div class="naka">
       <p class="midashi">円山公園と北海道神宮</p>
-      <p class="shosai">地下鉄東西線で円山公園駅。市街地からすぐなのに森を歩けます。<br>温泉に入りたければ、代わりに定山渓へ。札幌駅前から「かっぱライナー号」で約1時間、日帰り入浴を受け付けている旅館がいくつもあります。</p>
+      <p class="shosai">地下鉄東西線で円山公園駅。市街地からすぐなのに森を歩けます。<br>温泉に入りたければ、代わりに定山渓へ。札幌駅前から「かっぱライナー号」で約1時間。日帰り入浴を受け付けている旅館があります。</p>
     </div>
   </div>
+
   <div class="koma">
     <div class="ji aki">17:00</div>
     <div class="sen-tate"><span class="maru"></span></div>
@@ -375,6 +842,7 @@
       <p class="shosai">日没の30分前に山頂へ着くように動くと、明るいうちの景色と夜景の両方を見られます。市電とロープウェイで市街から40分ほど。</p>
     </div>
   </div>
+
   <div class="koma">
     <div class="ji aki">20:00</div>
     <div class="sen-tate"><span class="maru"></span></div>
@@ -395,22 +863,25 @@
       <p class="shosai">朝がいちばん早い日です。フロントが無人の時間帯なら、チェックアウト方法を前日に聞いておくこと。</p>
     </div>
   </div>
+
   <div class="koma">
     <div class="ji">6:15</div>
     <div class="sen-tate"><span class="maru nuri"></span></div>
     <div class="naka">
       <p class="midashi"><span class="shudan">JR</span>札幌駅発　快速エアポート</p>
-      <p class="shosai">宿から札幌駅までは地下鉄か徒歩20分ほど。空港までは約37分、1,150円。この時間帯なら座れます。</p>
+      <p class="shosai">宿から札幌駅までは地下鉄か徒歩20分ほど。空港までは約37分、1,150円。この時間帯なら座れる可能性が高いです。</p>
     </div>
   </div>
+
   <div class="koma">
     <div class="ji aki">6:55</div>
     <div class="sen-tate"><span class="maru"></span></div>
     <div class="naka">
       <p class="midashi">新千歳空港着、保安検査</p>
-      <p class="shosai">出発1時間半前。連休最終日でも、この時間の保安検査はまだ空いています。<br>朝食は保安検査を通る前の3階で。土産も、買うならここで先に済ませること。</p>
+      <p class="shosai">出発1時間半前。預け荷物がある場合は先に手続きを済ませます。朝食や土産の購入に時間を使いすぎず、余裕を持って保安検査場へ向かいます。</p>
     </div>
   </div>
+
   <div class="koma">
     <div class="ji">8:30</div>
     <div class="sen-tate"><span class="maru nuri"></span></div>
@@ -424,29 +895,75 @@
 <h2>予約番号</h2>
 <div class="yoyakuban">
   <dl>
-    <dt>夜行バス TB101</dt><dd>21467584</dd>
-    <dt>IBEX FW049</dt><dd>EVPAYW</dd>
-    <dt>ホテルルートイン多賀城駅東</dt><dd>T18DF74EF200C</dd>
-    <dt>ホテルブーゲンビリア札幌</dt><dd>RYa0nbhhta</dd>
-    <dt>ANA NH052</dt><dd>ELJD9R</dd>
-    <dt>バス会社 緊急連絡先</dt><dd>050-3851-0264</dd>
-    <dt>ブーゲンビリア札幌</dt><dd>011-222-1010</dd>
+    <dt>夜行バス TB101</dt>
+    <dd>21467584</dd>
+
+    <dt>IBEX FW049</dt>
+    <dd>EVPAYW</dd>
+
+    <dt>ホテルルートイン多賀城駅東</dt>
+    <dd>T18DF74EF200C</dd>
+
+    <dt>ホテルブーゲンビリア札幌</dt>
+    <dd>RYa0nbhhta</dd>
+
+    <dt>ANA NH052</dt>
+    <dd>ELJD9R</dd>
+
+    <dt>バス会社 緊急連絡先</dt>
+    <dd>050-3851-0264</dd>
+
+    <dt>ブーゲンビリア札幌</dt>
+    <dd>011-222-1010</dd>
   </dl>
 </div>
 
 <h2>費用<span class="hi">1人</span></h2>
 <table>
-  <tr><th>夜行バス 東京→仙台（保険込み）</th><td>8,350円</td></tr>
-  <tr><th>ホテルルートイン多賀城駅東（9/19・朝食付）</th><td>8,800円</td></tr>
-  <tr><th>仙台市内交通（るーぷる一日券・多賀城・松島）</th><td>約2,500円</td></tr>
-  <tr><th>仙台駅→仙台空港</th><td>約660円</td></tr>
-  <tr><th>IBEX FW049 仙台→新千歳</th><td>23,210円</td></tr>
-  <tr><th>新千歳→札幌</th><td>約1,150円</td></tr>
-  <tr><th>ホテルブーゲンビリア札幌 3泊</th><td>予約済み</td></tr>
-  <tr><th>札幌→小樽 往復</th><td>約1,500円</td></tr>
-  <tr><th>札幌→新千歳</th><td>約1,150円</td></tr>
-  <tr><th>ANA NH052 新千歳→羽田</th><td>25,480円</td></tr>
-  <tr class="gokei"><th>交通費と宿の合計</th><td>約73,000円</td></tr>
+  <tr>
+    <th>夜行バス 東京→仙台（保険込み）</th>
+    <td>8,350円</td>
+  </tr>
+  <tr>
+    <th>ホテルルートイン多賀城駅東（9/19・朝食付）</th>
+    <td>8,800円</td>
+  </tr>
+  <tr>
+    <th>仙台・多賀城・松島の交通、遊覧船、拝観料</th>
+    <td>約4,500円</td>
+  </tr>
+  <tr>
+    <th>仙台駅→仙台空港</th>
+    <td>約660円</td>
+  </tr>
+  <tr>
+    <th>IBEX FW049 仙台→新千歳</th>
+    <td>23,210円</td>
+  </tr>
+  <tr>
+    <th>新千歳→札幌</th>
+    <td>約1,150円</td>
+  </tr>
+  <tr>
+    <th>ホテルブーゲンビリア札幌 3泊</th>
+    <td>予約済み</td>
+  </tr>
+  <tr>
+    <th>札幌→小樽、手稲経由の交通費</th>
+    <td>約1,500円</td>
+  </tr>
+  <tr>
+    <th>札幌→新千歳</th>
+    <td>約1,150円</td>
+  </tr>
+  <tr>
+    <th>ANA NH052 新千歳→羽田</th>
+    <td>25,480円</td>
+  </tr>
+  <tr class="gokei">
+    <th>交通費と宿の合計</th>
+    <td>約75,000円</td>
+  </tr>
   <caption>札幌3泊の宿代と食費は別。9/19の仙台市内は最安のカプセルでも25,000円台という相場だったので、多賀城に出たことで1万6千円ほど浮いています。</caption>
 </table>
 
@@ -468,16 +985,21 @@
 
 <h2>確認しておくこと</h2>
 <ul class="futsu">
-  <li>バスタ東京八重洲 地下Aの乗り場の位置（前日までに地図で）</li>
-  <li>るーぷる仙台の当日の運行間隔と一日乗車券の売り場</li>
-  <li>松島の遊覧船の運航時刻。午前中の便に乗れるか</li>
-  <li>松島海岸駅のコインロッカーの有無とサイズ</li>
+  <li>バスタ東京八重洲 地下Aの乗り場の位置（前日までに地図で確認）</li>
+  <li>仙台市博物館の当日の展示内容と入館料</li>
+  <li>松島島巡り遊覧船の10:00便を予約し、当日の運航状況を確認</li>
+  <li>松島海岸駅のコインロッカーが満杯の場合に備え、観光協会の手荷物預かり場所を確認</li>
   <li>仙石線の仙台発多賀城方面の終電（夜に遅くなる場合）</li>
-  <li>ブーゲンビリア札幌へ、9/20の到着が21時前後になる旨の連絡</li>
-  <li>余市のニッカ蒸溜所に行くなら見学枠の予約</li>
+  <li>ブーゲンビリア札幌へ、9/20の到着が21時前後になる旨を連絡</li>
+  <li>小樽から手稲へ向かう17時台の列車を確認</li>
+  <li>キテネ食品館の営業日と営業時間を旅行直前に確認</li>
+  <li>9/22の8:30にANA NH052のオンラインチェックイン</li>
 </ul>
 
-<p class="shime">2026年9月18日〜23日／東京・仙台・松島・札幌・小樽<br>時刻は各社公表値にもとづく目安です。出発前に最新の時刻表で確認してください。</p>
+<p class="shime">
+  2026年9月18日〜23日／東京・仙台・松島・札幌・小樽・手稲<br>
+  時刻は各社公表値にもとづく目安です。出発前に最新の時刻表で確認してください。
+</p>
 
 </div>
 </body>
